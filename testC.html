@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<script>
+function Cooler(){
+   const inCooler = [];
+   
+  const Product=(n,t,c)=>{
+    return {
+    name: n,
+    type: t,
+    coast: c,
+    };
+  };
+  
+   return{
+     add: (n,t,c) => {
+       let temp = Product(n,t,c);
+       inCooler.push(temp);
+       },
+     getAll: () => inCooler.slice(),
+     remove: (item) => {for (let i=0;i<inCooler.length;i++)if (inCooler[i].name===item){inCooler.splice(i,1);}},
+     removeAll: () => inCooler.length=0
+   };
+}
+
+var C = new Cooler();
+console.log(C);
+C.add('beer','Alco',10);
+C.add('milk','water',5);
+C.add('beer','Alco',40);
+C.add('chiken','pelmeni',120);
+C.add('vodka','Alco',100);
+C.add('beer','Alco',10);
+C.add('milk','water',5);
+C.add('beer','Alco',40);
+C.add('chiken','pelmeni',120);
+C.add('vodka','Alco',100);
+C.add('beer','Alco',10);
+//console.log(C.getAll());
+//C.removeAll();
+C.remove('vodka');
+console.log(C.getAll());
+
+</script>
